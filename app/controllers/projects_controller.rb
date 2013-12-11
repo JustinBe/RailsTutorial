@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
-
+  include ProjectsHelper
+  
   def index
 
   end
@@ -10,9 +11,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new params[:project]
-    @project.save
-    flash[:notice] = "Project has been created."
-    redirect_to @project
+    validate_new_project_and_save
   end
 
   def show

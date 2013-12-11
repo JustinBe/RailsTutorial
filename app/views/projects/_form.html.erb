@@ -1,4 +1,5 @@
 <%= form_for(@project) do |form_builder| %>
+  <%= form_builder.error_messages %>
   <p>
     <%= form_builder.label :name %>
     <%= form_builder.text_field :name %>
