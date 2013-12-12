@@ -10,11 +10,11 @@ And /^(?:|I )fill in "([^\"]*)" with "([^\"]*)"$/ do |field, value|
   fill_in(field, :with => value)
 end
 
-And /^(?:|I )press "([^\"]*)"/ do |button|
+And /^(?:|I )press "([^\"]*)"$/ do |button|
   click_button(button)
 end
 
-Then /^(?:|I )should see "([^\"]*)"/ do |text|
+Then /^(?:|I )should see "([^\"]*)"$/ do |text|
   if page.respond_to? :should
     page.should have_content(text)
   else

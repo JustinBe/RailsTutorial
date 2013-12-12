@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
   include ProjectsHelper
   
   def index
-
+    @projects = Project.all
   end
 
   def new
@@ -16,5 +16,9 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find params[:id]
+  end
+
+  def update
+    
   end
 end
