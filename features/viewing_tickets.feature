@@ -2,16 +2,20 @@ Feature: Viewing tickets
   In order to view the tickets for a project
   As a user
   I want to see them on that project's page
-  
+
   Background:
+    Given there are the following users:
+    | email              | password |
+    | user@ticketee.com  | password |
+    | admin@ticketee.com | s3cr37   |
     Given there is a project called "TextMate 2"
-    And that project has a ticket:
+    And "user@ticketee.com" has created a ticket for this project:
     | title           | description |
     | Make it shiny!  | Gradients! Starbursts! Oh my! |
     And there is a project called "Internet Explorer"
-    And that project has a ticket:
+    And "admin@ticketee.com " has created a ticket for this project:
     | title                 | description |
-    | Standards compliance  | Isn't a joke. |
+    | Standards compliance  | Isn't a joke |
     And I am on the homepage
 
   Scenario: Viewing tickets for a given project
