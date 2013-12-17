@@ -1,0 +1,13 @@
+<%= form_for [:admin, @user] do |form_builder| %>
+<%= form_builder.error_messages %>
+<p>
+  <%= form_builder.label :email %>
+  <%= form_builder.text_field :email %>
+</p>
+
+<p>
+  <%= form_builder.label :password %>
+  <%= form_builder.password_field :password %>
+</p>
+<%= form_builder.submit %>
+<% end %>
