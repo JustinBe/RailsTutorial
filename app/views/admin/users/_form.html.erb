@@ -1,5 +1,6 @@
 <%= form_for [:admin, @user] do |form_builder| %>
 <%= form_builder.error_messages %>
+
 <p>
   <%= form_builder.label :email %>
   <%= form_builder.text_field :email %>
@@ -9,5 +10,11 @@
   <%= form_builder.label :password %>
   <%= form_builder.password_field :password %>
 </p>
+
+<p>
+  <%= form_builder.check_box :admin %>
+  <%= form_builder.label :admin, "Is an admin?" %>
+</p>
+
 <%= form_builder.submit %>
 <% end %>
